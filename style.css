@@ -1,0 +1,65 @@
+/* Importamos una fuente estilo "Gaming" (Rajdhani) y una sans normal */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap');
+
+/* Reset básico */
+:root {
+  --font-main: 'Inter', sans-serif;
+  --font-gaming: 'Rajdhani', sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #050505; /* Color de fondo de respaldo */
+}
+
+/* Títulos con fuente Gaming */
+h1, h2, h3, nav a {
+  font-family: var(--font-gaming);
+  text-transform: uppercase;
+}
+
+/* --- ANIMACIONES --- */
+
+/* Animación de Nieve cayendo */
+@keyframes snow {
+  0% {
+    transform: translateY(-10vh) translateX(-10px) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) translateX(10px) rotate(360deg);
+    opacity: 0.3;
+  }
+}
+
+.animate-snow {
+  animation-name: snow;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  position: fixed; /* Asegura que la nieve no afecte el layout */
+  z-index: 0;
+}
+
+/* Animación de Brillo Pulsante (para el logo) */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1.5);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.6);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Gradiente Dorado para Textos */
+.bg-gradient-gold {
+  background-image: linear-gradient(to right, #FCD34D, #FFD700, #FCD34D);
+}
